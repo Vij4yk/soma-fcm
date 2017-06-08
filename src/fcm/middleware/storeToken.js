@@ -18,7 +18,7 @@ export default () => async (ctx, next) => {
       }
 
       await db.query(`INSERT INTO fcm (client_id, token) VALUES ($1, $2)
-                     ON CONFLICT (client_id, token) DO UPDATE
+                     ON CONFLICT (client_id) DO UPDATE
                      SET token = $2`, [clientId, token])
 
       console.log(clientId, device_id, token)

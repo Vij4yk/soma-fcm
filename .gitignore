@@ -1,3 +1,6 @@
 lib
 node_modules
 package-lock.json
+src/SoMA-58d6465cb695.json
+src/serviceAccountKey.json
+*.swp

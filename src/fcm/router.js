@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import { getAllToken, storeToken, sendMsg } from './middleware'
+import { getAllToken, storeToken, msgAll, msgTopic, msgSurvey, msgLottery } from './middleware'
 
 let router = new Router({
   name: 'token',
@@ -7,8 +7,10 @@ let router = new Router({
 })
 
 router
-  //.get('/msg', getAllToken())
-  .post('/msg', sendMsg())
+  //.get('/token/all', getAllToken())
+  .get('/msg/survey', msgSurvey())
+  //.post('/msg/lottery', msgLottery())
+  //.post('/msg/topic/:topic', msgTopic())
   .post('/token', storeToken(), (ctx) => { ctx.status = 200 })
 
 export default router

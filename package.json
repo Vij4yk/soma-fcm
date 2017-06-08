@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "deploy-rsync": "rsync -avz --exclude node_modules ./ 141.26.69.119:soma/api",
-    "dev": "nodemon src/server.babel.js",
+    "dev": "nodemon -w ./src src/server.babel.js",
     "start": "node src/server.babel.js"
   },
   "repository": {
